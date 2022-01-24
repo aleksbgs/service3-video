@@ -18,3 +18,10 @@ COPY --from=build_sales-api /service/service /service/service
 WORKDIR /service
 CMD ["./service"]
 
+LABEL org.opencontainers.image.created="${BUILD_DATE}" \
+      org.opencontainers.image.title="service-api" \
+      org.opencontainers.image.authors="Aleksandar Markovic <amarkovic29@gmail.com>" \
+      org.opencontainers.image.source="https://github.com/aleksbgs/service/app/sales-api" \
+      org.opencontainers.image.revision="${BUILD_REF}" \
+      org.opencontainers.image.vendor="Aleksandar Markovic"
+
